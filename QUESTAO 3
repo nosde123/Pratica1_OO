@@ -1,0 +1,66 @@
+public class Aluno {
+    private String nome;
+    private int matricula;
+    private double notaAV1;
+    private double notaAV2;
+    private double notaAE;
+    private String curso;
+    private int periodo;
+
+    // Construtor
+    public Aluno(String nome, int matricula, double notaAV1, double notaAV2, String curso, int periodo) {
+        this.nome = nome;
+        this.matricula = matricula;
+        this.notaAV1 = notaAV1;
+        this.notaAV2 = notaAV2;
+        this.curso = curso;
+        this.periodo = periodo;
+    }
+
+    // Métodos para alterar as notas
+    public void alteraNotaAV1(double novaNota) {
+        notaAV1 = novaNota;
+    }
+
+    public void alteraNotaAV2(double novaNota) {
+        notaAV2 = novaNota;
+    }
+
+    public void alteraNotaAE(double novaNota) {
+        notaAE = novaNota;
+    }
+
+    // Método para avaliar o aluno
+    public void avaliarAluno() {
+        double somaNotas = notaAV1 + notaAV2;
+        if (somaNotas >= 60) {
+            System.out.println("Aluno " + nome + " Aprovado.");
+        } else {
+            System.out.println("Aluno " + nome + " em Recuperação.");
+        }
+    }
+
+    // Método para avaliar em recuperação com base na notaAE
+    public void avaliarRecuperacao(double notaAE) {
+        double media = (notaAV1 + notaAV2 + notaAE) / 3;
+        if (media >= 60) {
+            System.out.println("Aluno " + nome + " Aprovado na recuperação.");
+        } else {
+            System.out.println("Aluno " + nome + " Reprovado na recuperação.");
+        }
+    }
+
+    public static void main(String[] args) {
+        // Criando um objeto Aluno
+        Aluno aluno1 = new Aluno("Maria", 12345, 70, 55, "Engenharia", 2);
+
+        // Alterando a nota da AV2
+        aluno1.alteraNotaAV2(58);
+
+        // Avaliando o aluno
+        aluno1.avaliarAluno();
+
+        // Avaliando em recuperação com notaAE
+        aluno1.avaliarRecuperacao(40);
+    }
+}
