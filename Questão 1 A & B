@@ -1,0 +1,84 @@
+public class Carro {
+    private String marca;
+    private String modelo;
+    private int ano;
+    private double preco;
+
+    public Carro(String marca, String modelo, int ano, double preco) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.preco = preco;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+}
+
+public class Cliente {
+    private String nome;
+    private String cpf;
+    private String endereco;
+    private String telefone;
+
+    public Cliente(String nome, String cpf, String endereco, String telefone) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.endereco = endereco;
+        this.telefone = telefone;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+}
+
+public class Transacao {
+    private Carro carroVendido;
+    private Cliente comprador;
+    private double valor;
+
+    public Transacao(Carro carroVendido, Cliente comprador, double valor) {
+        this.carroVendido = carroVendido;
+        this.comprador = comprador;
+        this.valor = valor;
+    }
+
+    public Carro getCarroVendido() {
+        return carroVendido;
+    }
+
+    public Cliente getComprador() {
+        return comprador;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+}
+
