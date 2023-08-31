@@ -1,0 +1,31 @@
+public class EmpregadoDaFaculdade {
+    private String nome;
+    private double salario;
+    private int horasAula;
+
+    // Construtor
+    public EmpregadoDaFaculdade(String nome, double salario, int horasAula) {
+        this.nome = nome;
+        this.salario = salario;
+        this.horasAula = horasAula;
+    }
+
+    // Método modificado para somar o bônus
+    double getGastos() {
+        return this.salario + (this.horasAula * 40); // Somando o bônus de R$40 por hora/aula
+    }
+
+    // Método modificado para retornar o valor atualizado com o bônus
+    String getInfo() {
+        return "Nome: " + this.nome + ", Salário + Bônus: R$" + getGastos();
+    }
+
+    public static void main(String[] args) {
+        // Criando um objeto EmpregadoDaFaculdade
+        EmpregadoDaFaculdade professor = new EmpregadoDaFaculdade("João", 2500.0, 20);
+
+        // Exibindo os resultados dos métodos
+        System.out.println("Gastos: R$" + professor.getGastos());
+        System.out.println(professor.getInfo());
+    }
+}
